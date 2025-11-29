@@ -204,33 +204,264 @@ dan kegiatan operasional masjid.
     </tr>
   </table>
 </div>
-<!-- KOMENTAR (GOOGLE FORM) --> (GISCUS) -->
+<!-- COMMENTS (Firebase + Admin Reply) -->
 <h2>Komentar Pengunjung</h2>
-<div class="comment-box">
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdz1QvMnYzplbBmvpw923Wgj_7yccjXgI0gilJY7rIqrzxALw/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Memuat…</iframe>
+<div class="comment-box" id="commentSection">
+  <div id="commentControls" style="margin-bottom:10px;">
+    <input type="text" id="visitorName" placeholder="Nama Anda" style="width:48%; padding:8px; margin-right:4%;">
+    <input type="text" id="visitorPhone" placeholder="Nomor WA (opsional)" style="width:48%; padding:8px;">
+    <textarea id="visitorMsg" placeholder="Tulis komentar..." style="width:100%; height:80px; padding:8px; margin-top:8px;"></textarea>
+    <button id="sendCommentBtn" style="margin-top:8px; width:100%; padding:10px; background:#2b7a0b; color:white; border:none; border-radius:5px;">Kirim Komentar</button>
+    <div style="margin-top:8px; display:flex; gap:8px;">
+      <button id="adminLoginBtn" style="flex:1; padding:8px;">Login Admin</button>
+      <button id="adminLogoutBtn" style="flex:1; padding:8px; display:none; background:#c0392b; color:white;">Logout Admin</button>
+    </div>
+  </div>
+
+  <div id="commentsList" style="margin-top:12px;"></div>
 </div>
 
+<!-- Firebase + App logic -->
+<script type="module">
+  // === FIREBASE CONFIG (gunakan config yang Anda berikan) ===
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+  import {
+    getFirestore, collection, addDoc, onSnapshot, query, orderBy, serverTimestamp,
+    doc, addDoc as addSubDoc, deleteDoc
+  } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
 
-</body>
-</html>
-<!-- KOMENTAR (GISCUS) -->
-<h2>Komentar Pengunjung</h2>
-<div class="comment-box">
-<div id="giscus_thread"></div>
-<script src="https://giscus.app/client.js"
-data-repo="itdasulteng-prog/MASJID-BABURRAHMAN"
-data-repo-id="R_kgDOQdxIxQ"
-data-category="Diskusi Tentang Pembangunan Masjid"
-data-category-id="DIC_kwDOQdxIxc4CzL_t"
-data-mapping="pathname"
-data-strict="0"
-data-reactions-enabled="1"
-data-emit-metadata="0"
-data-input-position="bottom"
-data-theme="preferred_color_scheme"
-data-lang="id"
-crossorigin="anonymous"
-async>
+  const firebaseConfig = {
+    apiKey: "AIzaSyDUmbTnwFI6MMGsnCrOJUnG_x_p3gPX0pw",
+    authDomain: "beri-masukan.firebaseapp.com",
+    projectId: "beri-masukan",
+    storageBucket: "beri-masukan.firebasestorage.app",
+    messagingSenderId: "970196231094",
+    appId: "1:970196231094:web:c5965cdf119097ae495717",
+    measurementId: "G-SS8LXE864M"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // Admin password (sesuai permintaan Anda)
+  const ADMIN_PASSWORD = "D4rm4w4nt0";
+
+  // DOM
+  const sendBtn = document.getElementById("sendCommentBtn");
+  const nameInput = document.getElementById("visitorName");
+  const phoneInput = document.getElementById("visitorPhone");
+  const msgInput = document.getElementById("visitorMsg");
+  const commentsList = document.getElementById("commentsList");
+  const adminLoginBtn = document.getElementById("adminLoginBtn");
+  const adminLogoutBtn = document.getElementById("adminLogoutBtn");
+
+  // helper: check if admin (sessionStorage)
+  function isAdmin() {
+    return sessionStorage.getItem("masjid_is_admin") === "1";
+  }
+
+  function setAdminUI() {
+    if (isAdmin()) {
+      adminLoginBtn.style.display = "none";
+      adminLogoutBtn.style.display = "inline-block";
+    } else {
+      adminLoginBtn.style.display = "inline-block";
+      adminLogoutBtn.style.display = "none";
+    }
+  }
+
+  // admin login prompt
+  adminLoginBtn.addEventListener("click", () => {
+    const p = prompt("Masukkan password admin:");
+    if (p === ADMIN_PASSWORD) {
+      sessionStorage.setItem("masjid_is_admin", "1");
+      alert("Login admin berhasil — Anda dapat membalas atau menghapus komentar.");
+      setAdminUI();
+    } else {
+      alert("Password salah.");
+    }
+  });
+
+  adminLogoutBtn.addEventListener("click", () => {
+    sessionStorage.removeItem("masjid_is_admin");
+    setAdminUI();
+    alert("Anda telah logout sebagai admin.");
+  });
+
+  setAdminUI();
+
+  // Submit comment
+  sendBtn.addEventListener("click", async () => {
+    const name = nameInput.value.trim();
+    const phone = phoneInput.value.trim();
+    const text = msgInput.value.trim();
+    if (!name || !text) { alert("Nama dan komentar wajib diisi."); return; }
+
+    // save to Firestore collection 'comments'
+    try {
+      await addDoc(collection(db, "comments"), {
+        name, phone, text,
+        createdAt: serverTimestamp()
+      });
+      nameInput.value = ""; phoneInput.value = ""; msgInput.value = "";
+    } catch (e) {
+      console.error("Gagal kirim komentar:", e);
+      alert("Gagal mengirim komentar. Coba lagi.");
+    }
+  });
+
+  // Render a single comment + replies
+  function renderComment(docSnap) {
+    const data = docSnap.data();
+    const id = docSnap.id;
+
+    // comment container
+    const wrap = document.createElement("div");
+    wrap.style.background = "#fff";
+    wrap.style.borderRadius = "8px";
+    wrap.style.padding = "10px";
+    wrap.style.marginBottom = "10px";
+    wrap.style.boxShadow = "0 1px 4px rgba(0,0,0,0.06)";
+
+    const header = document.createElement("div");
+    header.innerHTML = `<strong>${escapeHtml(data.name || "Anonim")}</strong> <small style="color:#666; margin-left:8px;">${data.phone ? escapeHtml(data.phone) : ""}</small>`;
+    wrap.appendChild(header);
+
+    const body = document.createElement("div");
+    body.style.marginTop = "6px";
+    body.textContent = data.text || "";
+    wrap.appendChild(body);
+
+    // replies container
+    const repliesWrap = document.createElement("div");
+    repliesWrap.style.marginTop = "10px";
+    repliesWrap.style.marginLeft = "10px";
+    repliesWrap.id = "replies-" + id;
+    wrap.appendChild(repliesWrap);
+
+    // admin controls (reply & delete) - shown only if admin
+    const ctrl = document.createElement("div");
+    ctrl.style.marginTop = "8px";
+    if (isAdmin()) {
+      const replyBtn = document.createElement("button");
+      replyBtn.textContent = "Balas (Admin)";
+      replyBtn.style.marginRight = "8px";
+      replyBtn.style.padding = "6px 8px";
+
+      const delBtn = document.createElement("button");
+      delBtn.textContent = "Hapus";
+      delBtn.style.padding = "6px 8px";
+      delBtn.style.background = "#c0392b";
+      delBtn.style.color = "#fff";
+      delBtn.style.border = "none";
+
+      // reply form (initially hidden)
+      const replyArea = document.createElement("div");
+      replyArea.style.display = "none";
+      replyArea.style.marginTop = "8px";
+
+      const replyInput = document.createElement("textarea");
+      replyInput.style.width = "100%";
+      replyInput.style.height = "60px";
+      replyInput.placeholder = "Tulis balasan admin...";
+
+      const replySend = document.createElement("button");
+      replySend.textContent = "Kirim Balasan";
+      replySend.style.marginTop = "6px";
+      replySend.style.padding = "8px";
+      replySend.style.background = "#2b7a0b";
+      replySend.style.color = "#fff";
+      replySend.style.border = "none";
+
+      replyBtn.addEventListener("click", () => {
+        replyArea.style.display = replyArea.style.display === "none" ? "block" : "none";
+      });
+
+      replySend.addEventListener("click", async () => {
+        const txt = replyInput.value.trim();
+        if (!txt) { alert("Balasan kosong."); return; }
+        try {
+          await addSubDoc(collection(db, "comments", id, "replies"), {
+            admin: true,
+            text: txt,
+            createdAt: serverTimestamp()
+          });
+          replyInput.value = "";
+          replyArea.style.display = "none";
+        } catch (e) {
+          console.error(e);
+          alert("Gagal mengirim balasan.");
+        }
+      });
+
+      delBtn.addEventListener("click", async () => {
+        if (!confirm("Hapus komentar ini?")) return;
+        try {
+          // delete all replies first is optional for cleanup (not implemented here)
+          await deleteDoc(doc(db, "comments", id));
+          // UI will auto-update via snapshot listener
+        } catch (e) {
+          console.error(e);
+          alert("Gagal menghapus komentar.");
+        }
+      });
+
+      replyArea.appendChild(replyInput);
+      replyArea.appendChild(replySend);
+
+      ctrl.appendChild(replyBtn);
+      ctrl.appendChild(delBtn);
+      ctrl.appendChild(replyArea);
+    } else {
+      // show "Balas" button that invites to admin login
+      const hint = document.createElement("div");
+      hint.style.marginTop = "8px";
+      hint.style.color = "#666";
+      hint.textContent = "Jika Anda admin, silakan login untuk membalas.";
+      ctrl.appendChild(hint);
+    }
+
+    wrap.appendChild(ctrl);
+
+    // replace or append
+    wrap.setAttribute("data-id", id);
+    return { wrap, repliesWrap };
+  }
+
+  // escape
+  function escapeHtml(str) {
+    return str.replaceAll && str.replaceAll(/[&<>"']/g, (m) => {
+      return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[m];
+    });
+  }
+
+  // Real-time listener for comments
+  const q = query(collection(db, "comments"), orderBy("createdAt", "desc"));
+  onSnapshot(q, (snapshot) => {
+    commentsList.innerHTML = "";
+    snapshot.forEach((docSnap) => {
+      const { wrap, repliesWrap } = renderComment(docSnap);
+      commentsList.appendChild(wrap);
+
+      // realtime listener for replies for this comment
+      const repliesQ = query(collection(db, "comments", docSnap.id, "replies"), orderBy("createdAt", "asc"));
+      onSnapshot(repliesQ, (rSnap) => {
+        repliesWrap.innerHTML = "";
+        rSnap.forEach((rDoc) => {
+          const r = rDoc.data();
+          const el = document.createElement("div");
+          el.style.background = r.admin ? "#f1f8ee" : "#f7f7f7";
+          el.style.padding = "8px";
+          el.style.borderRadius = "6px";
+          el.style.marginBottom = "6px";
+          el.innerHTML = `<small style="color:#2b7a0b;"><b>${r.admin ? "Admin" : "Balasan"}</b></small><div style="margin-top:4px;">${escapeHtml(r.text || "")}</div>`;
+          repliesWrap.appendChild(el);
+        });
+      }, (err) => console.error(err));
+    });
+  }, (err) => console.error(err));
+</script>
+
 </script>
 </div>
 
