@@ -1,199 +1,257 @@
-<!-- Final index.html for Masjid Baburrahman (Foto & Video Horizontal + Donatur Vertikal + Komentar) -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Masjid Baburrahman Dusun Pontung</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donasi Masjid Baburrahman</title>
+  <style>
+    body { margin:0; font-family:'Segoe UI', sans-serif; background:#f3f3f3; }
+    .hero {
+      background:url('masjid-lama.jpg') center/cover no-repeat;
+      height:60vh; display:flex; align-items:center; justify-content:center;
+      text-align:center; color:white; padding:20px; position:relative;
+    }
+    .hero::after {
+      content:""; position:absolute; inset:0; background:rgba(0,0,0,0.55);
+    }
+    .hero-content { position:relative; z-index:2; }
+    .hero h1 { font-size:2.5rem; margin:0; color:#ffd700; }
+    .hero p { font-size:1.2rem; margin-top:10px; }
+    .box {
+      max-width:900px; margin:40px auto; background:white; padding:30px;
+      border-radius:16px; box-shadow:0 6px 20px rgba(0,0,0,0.1);
+    }
+    .progress-container {
+      background:#eaeaea; border-radius:20px; height:22px; overflow:hidden;
+      margin-top:10px;
+    }
+    .progress {
+      background:linear-gradient(90deg,#1a8754,#44c06f);
+      height:100%; width:40%;
+    }
+    .qr { text-align:center; margin:20px 0; }
+    .qr img {
+      width:250px; border-radius:12px; background:white; padding:10px;
+      border:1px solid #ddd;
+    }
+    .btn {
+      display:inline-block; padding:14px 28px; background:#1A8754; color:white;
+      text-decoration:none; border-radius:10px; font-weight:bold; transition:0.3s;
+    }
+    .btn:hover { background:#14633f; }
+    .gallery {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:15px; margin-top:20px;
+    }
+    .gallery img {
+      width:100%; border-radius:12px; height:180px; object-fit:cover;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
+  </style>
+  <!-- Open Graph for WhatsApp/Facebook Preview -->
+<meta property="og:title" content="Mesjid Baburrahman Dusun Pontung - Walea Besar">
+<meta property="og:description" content="Galang dana pembangunan Mesjid Baburrahman Dusun Pontung, Kecamatan Walea Besar, Kabupaten Tojo Una-Una. Ayo turut beramal jariyah.">
+<meta property="og:image" content="https://itdasulteng-prog.github.io/MASJID-BABURRAHMAN/images/preview-masjid.jpg">
+<meta property="og:url" content="https://itdasulteng-prog.github.io/MASJID-BABURRAHMAN/">
+<meta property="og:type" content="website">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f5f5f5;
-        }
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://itdasulteng-prog.github.io/MASJID-BABURRAHMAN/images/preview-masjid.jpg">
 
-        header {
-            background: #2b7a0b;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        h2 {
-            text-align: center;
-        }
-
-        .container {
-            width: 95%;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        /* INFO MASJID */
-        .info-box {
-            background: white;
-            padding: 15px;
-            margin-top: 15px;
-            border-radius: 10px;
-            text-align: center;
-            line-height: 1.7em;
-        }
-
-        /* FOTO & VIDEO HORIZONTAL */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .gallery img,
-        .gallery video {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        /* DONATUR VERTIKAL */
-        .donatur-list {
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 15px;
-        }
-
-        .donatur-list li {
-            margin-bottom: 5px;
-        }
-
-        /* KOMENTAR */
-        .comment-box {
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 25px;
-        }
-
-        .comment {
-            background: #e8e8e8;
-            padding: 10px;
-            border-radius: 7px;
-            margin-bottom: 10px;
-        }
-
-        footer {
-            background: #2b7a0b;
-            color: white;
-            text-align: center;
-            padding: 12px;
-            margin-top: 20px;
-        }
-    </style>
 </head>
 <body>
 
-<header>
-    <h1>Masjid Baburrahman Dusun Pontung</h1>
-</header>
-
-<div class="container">
-
-    <!-- INFO MASJID -->
-    <div class="info-box">
-        <b>Lokasi:</b> Dusun Pontung, Walea Besar, Kabupaten Tojo Una-Una<br>
-        <b>Rekening Donasi Bank Sulteng:</b> 3010207182485<br>
-        <b>WA Admin:</b> 0853 9475 0597
-    </div>
-
-    <!-- GALERI FOTO & VIDEO -->
-    <h2>Galeri Foto & Video Kegiatan</h2>
-    <div class="gallery">
-
-        <!-- FOTO -->
-        <img src="desain-masjid.jpg" alt="Desain Masjid">
-        <img src="foto1.jpg" alt="Kegiatan Masjid">
-        <img src="foto2.jpg" alt="Pembangunan Masjid">
-        <img src="foto3.jpg" alt="Kegiatan Masjid">
-
-        <!-- VIDEO -->
-        <video controls>
-            <source src="rapat.mp4" type="video/mp4">
-        </video>
-
-        <video controls>
-            <source src="kerja.mp4" type="video/mp4">
-        </video>
-
-        <video controls>
-            <source src="perjalanan.mp4" type="video/mp4">
-        </video>
-    </div>
-
-    <!-- DONATUR -->
-    <h2>Daftar Donatur</h2>
-    <div class="donatur-list">
-        <ul>
-            <li>Hamba Allah – Rp 100.000</li>
-            <li>Hamba Allah – Rp 50.000</li>
-            <li>Hamba Allah – Rp 20.000</li>
-            <!-- Tambah data donatur baru di sini -->
-        </ul>
-    </div>
-
-    <!-- KOMENTAR -->
-    <h2>Komentar Pengunjung</h2>
-    <div class="comment-box">
-        <div id="comments"></div>
-
-        <input type="text" id="nama" placeholder="Nama Anda" style="width:100%; padding:10px; margin-bottom:10px;">
-        <textarea id="komentar" placeholder="Tulis komentar..." style="width:100%; height:80px; padding:10px;"></textarea>
-
-        <button onclick="kirimKomentar()" style="margin-top:10px; width:100%; padding:10px; background:#2b7a0b; color:white; border:none; border-radius:5px;">Kirim Komentar</button>
-    </div>
-
+<div class="hero">
+  <div class="hero-content">
+    <h1>MASJID BABURRAHMAN</h1>
+    <h2>Dusun Pontung, Desa Pasokan, Kec. Walea Besar, Kab. Tojo Una-Una</h2>
+    <p>“Jika seseorang meninggal dunia, 
+      maka terputuslah amalannya kecuali tiga perkara yaitu: 
+      sedekah jariyah, ilmu yang dimanfaatkan, 
+      atau do’a anak yang sholeh” (HR. Muslim no. 1631)</p>
+  </div>
 </div>
 
-<footer>
-    &copy; 2025 Masjid Baburrahman Dusun Pontung - Walea Besar
-</footer>
+<div class="box">
+  <h2>Donasi Pembangunan & Kegiatan Masjid</h2>
+  <p>
+    Masjid Baburrahman yang terletak di Dusun Pontung, 
+Desa Pasokan, Kec. Walea Besar Kab. Tojo Una Una, 
+membuka kesempatan bagi jamaah dan kaum muslimin 
+untuk berpartisipasi dalam pembangunan, renovasi, 
+dan kegiatan operasional masjid.
+  </p>
 
+  <h3>Target Donasi</h3>
+  <p><strong>Terkumpul: Rp 5.250.000,00 / Target: Rp 464.458.900</strong></p>
+
+  <div class="progress-container"><div class="progress"></div></div>
+
+  <h3 style="margin-top:30px;">Donasi via QRIS</h3>
+  <div class="qr">
+    <img src="qris.png" alt="QRIS Donasi Masjid Baburrahman">
+  </div>
+
+  <h3>Rekening Bank</h3>
+  <p>
+    <strong>Bank Sulteng</strong><br>
+    No. Rekening: <strong>3010207182485</strong><br>
+    a.n. <strong>Masjid Baburrahman</strong>
+  </p>
+
+  <a class="btn" href="https://wa.me/6285394750597" target="_blank">
+    Konfirmasi Donasi via WhatsApp
+  </a>
+</div>
+
+<div class="box">
+  <h2>Galeri Kegiatan Masjid</h2>
+  <div class="gallery">
+    <img src="foto1.jpg" alt="Kegiatan 1">
+    <img src="foto2.jpg" alt="Kegiatan 2">
+    <img src="foto3.jpg" alt="Kegiatan 3">
+    <img src="foto4.jpg" alt="Kegiatan 4">
+    <img src="foto5.jpg" alt="Kegiatan 5">
+    <img src="foto6.jpg" alt="Kegiatan 6">
+    <img src="foto7.jpg" alt="Kegiatan 7">
+    <img src="foto8.jpg" alt="Kegiatan 8">
+     <img src="masjid-lama.jpg" alt="Kegiatan 9">
+
+<div class="box">
+  <h2>Foto Desain Perencanaan Pembangunan Masjid</h2>
+  <div class="gallery">
+    <img src="desain1.jpg" alt="Kegiatan 1">
+    <img src="desain2.jpg" alt="Kegiatan 2">
+    <img src="desain3.jpg" alt="Kegiatan 3">
+    <img src="desain4.jpg" alt="Kegiatan 4">
+    <img src="desain5.jpg" alt="Kegiatan 5">
+    <img src="desain5.jpg" alt="Kegiatan 6">
+    
+    <div class="box">
+  <h4>Sekilas Vidio Perjalanan ke Lokasi Masjid 
+    Baburrahman Dusun Pontung, Desa Pasokan</h4>  
+<video width="100%" controls>
+  <source src="Perjalanan.mp4" type="video/mp4">
+  Browser Anda tidak mendukung video.
+</video>
+</div>
+ 
+   <div class="box">
+  <h4>Kumpulan Video Kegiatan Pembangunan Masjid</h4>  
+
+  <video width="100%" controls>
+    <source src="rapat.mp4" type="video/mp4">
+    Browser Anda tidak mendukung video.
+  </video>
+
+  <br><br>
+
+  <video width="100%" controls>
+    <source src="kerja.mp4" type="video/mp4">
+    Browser Anda tidak mendukung video.
+  </video>
+</div>
+</div>
+
+<div class="box">
+  <h2>Video tentang Kec. Walea Besar</h2>
+  <div style="text-align:center; margin: 20px 0;">
+      <iframe 
+          width="100%" 
+          height="315" 
+          src="https://www.youtube.com/embed/nov_vGMJ1fg" 
+          title="Video Pembangunan Masjid Baburrahman" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen>
+      </iframe>
+  </div>
+</div>
+<div class="box">
+  <h2>Daftar Donatur</h2>
+  <table style="width:100%; border-collapse: collapse;">
+    <tr>
+      <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Nama</th>
+      <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Nominal</th>
+    </tr>
+    <tr>
+      <td style="padding:8px; border-bottom:1px solid #ddd;">hamba Allah</td>
+      <td style="padding:8px; border-bottom:1px solid #ddd;">Rp 100.000</td>
+      </tr>
+    <tr>
+      <td style="padding:8px; border-bottom:1px solid #ddd;">Znd</td>
+      <td style="padding:8px; border-bottom:1px solid #ddd;">Rp 100.000</td>
+      </tr>
+    <tr>
+      <td style="padding:8px; border-bottom:1px solid #ddd;">Pak Andika</td>
+      <td style="padding:8px; border-bottom:1px solid #ddd;">Rp 500.000</td>
+      </tr>
+    <tr>
+      <td style="padding:8px; border-bottom:1px solid #ddd;">Hamba Allah</td>
+      <td style="padding:8px; border-bottom:1px solid #ddd;">Rp 800.000</td>
+      </tr>
+    <tr>
+      <td style="padding:8px; border-bottom:1px solid #ddd;">Hamba Allah</td>
+      <td style="padding:8px; border-bottom:1px solid #ddd;">Rp 3.000.000</td>
+      </tr>
+    <tr>
+      <td style="padding:8px; border-bottom:1px solid #ddd;">Silpa</td>
+      <td style="padding:8px; border-bottom:1px solid #ddd;">Rp 500.000</td>
+       </tr>
+    <tr>
+      <td style="padding:8px; border-bottom:1px solid #ddd;">Muhammad Akbar Laebo</td>
+      <td style="padding:8px; border-bottom:1px solid #ddd;">Rp 250.000</td>
+    </tr>
+  </table>
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>
 <script>
-    function loadKomentar() {
-        let data = localStorage.getItem("komentarMasjid");
-        if (data) {
-            document.getElementById("comments").innerHTML = data;
-        }
-    }
+function loadKomentar() {
+let data = localStorage.getItem("komentarMasjid");
+if (data) {
+document.getElementById("comments").innerHTML = data;
+}
+}
 
-    function kirimKomentar() {
-        let nama = document.getElementById("nama").value;
-        let komentar = document.getElementById("komentar").value;
 
-        if (nama.trim() === "" || komentar.trim() === "") {
-            alert("Nama dan komentar wajib diisi!");
-            return;
-        }
+function kirimKomentar() {
+let nama = document.getElementById("nama").value;
+let komentar = document.getElementById("komentar").value;
 
-        let box = `
-            <div class="comment">
-                <b>${nama}</b><br>
-                ${komentar}
-            </div>
-        `;
 
-        document.getElementById("comments").innerHTML += box;
+if (nama.trim() === "" || komentar.trim() === "") {
+alert("Nama dan komentar wajib diisi!");
+return;
+}
 
-        localStorage.setItem("komentarMasjid", document.getElementById("comments").innerHTML);
 
-        document.getElementById("nama").value = "";
-        document.getElementById("komentar").value = "";
-    }
+let box = `
+<div class="comment">
+<b>${nama}</b><br>
+${komentar}
+</div>
+`;
 
-    loadKomentar();
+
+document.getElementById("comments").innerHTML += box;
+
+
+localStorage.setItem("komentarMasjid", document.getElementById("comments").innerHTML);
+
+
+document.getElementById("nama").value = "";
+document.getElementById("komentar").value = "";
+}
+
+
+loadKomentar();
 </script>
+
 
 </body>
 </html>
