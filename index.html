@@ -205,69 +205,26 @@ dan kegiatan operasional masjid.
   </table>
 </div>
 
- <!-- KOMENTAR -->
+<!-- KOMENTAR (GISCUS) -->
 <h2>Komentar Pengunjung</h2>
 <div class="comment-box">
-<div id="comments"></div>
-
-
-<input type="text" id="nama" placeholder="Nama Anda" style="width:100%; padding:10px; margin-bottom:10px;">
-<textarea id="komentar" placeholder="Tulis komentar..." style="width:100%; height:80px; padding:10px;"></textarea>
-
-
-<button onclick="kirimKomentar()" style="margin-top:10px; width:100%; padding:10px; background:#2b7a0b; color:white; border:none; border-radius:5px;">Kirim Komentar</button>
-</div>
-
-
-</div>
-
-
-<footer>
-&copy; 2025 Masjid Baburrahman Dusun Pontung - Walea Besar
-</footer>
-
-
-<script>
-function loadKomentar() {
-let data = localStorage.getItem("komentarMasjid");
-if (data) {
-document.getElementById("comments").innerHTML = data;
-}
-}
-
-
-function kirimKomentar() {
-let nama = document.getElementById("nama").value;
-let komentar = document.getElementById("komentar").value;
-
-
-if (nama.trim() === "" || komentar.trim() === "") {
-alert("Nama dan komentar wajib diisi!");
-return;
-}
-
-
-let box = `
-<div class="comment">
-<b>${nama}</b><br>
-${komentar}
-</div>
-`;
-
-
-document.getElementById("comments").innerHTML += box;
-
-
-localStorage.setItem("komentarMasjid", document.getElementById("comments").innerHTML);
-
-
-document.getElementById("nama").value = "";
-document.getElementById("komentar").value = "";
-}
-
-
-loadKomentar();
+<div id="giscus_thread"></div>
+<script src="https://giscus.app/client.js"
+data-repo="itdasulteng-prog/MASJID-BABURRAHMAN"
+data-repo-id="R_kgDOQdxIxQ"
+data-category="Diskusi Tentang Pembangunan Masjid"
+data-category-id="DIC_kwDOQdxIxc4CzL_t"
+data-mapping="pathname"
+data-strict="0"
+data-reactions-enabled="1"
+data-emit-metadata="0"
+data-input-position="bottom"
+data-theme="preferred_color_scheme"
+data-lang="id"
+crossorigin="anonymous"
+async>
 </script>
+</div>
 
 
 </body>
