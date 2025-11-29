@@ -205,11 +205,28 @@ dan kegiatan operasional masjid.
   </table>
 </div>
 
-  </div>
+ <!-- KOMENTAR -->
+<h2>Komentar Pengunjung</h2>
+<div class="comment-box">
+<div id="comments"></div>
+
+
+<input type="text" id="nama" placeholder="Nama Anda" style="width:100%; padding:10px; margin-bottom:10px;">
+<textarea id="komentar" placeholder="Tulis komentar..." style="width:100%; height:80px; padding:10px;"></textarea>
+
+
+<button onclick="kirimKomentar()" style="margin-top:10px; width:100%; padding:10px; background:#2b7a0b; color:white; border:none; border-radius:5px;">Kirim Komentar</button>
 </div>
 
-</body>
-</html>
+
+</div>
+
+
+<footer>
+&copy; 2025 Masjid Baburrahman Dusun Pontung - Walea Besar
+</footer>
+
+
 <script>
 function loadKomentar() {
 let data = localStorage.getItem("komentarMasjid");
