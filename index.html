@@ -4,536 +4,549 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Donasi Masjid Baburrahman</title>
-  <style>
-    body { margin:0; font-family:'Segoe UI', sans-serif; background:#f3f3f3; }
-    .hero {
-      background:url('latar.jpeg') center/cover no-repeat;
-      height:60vh; display:flex; align-items:center; justify-content:center;
-      text-align:center; color:white; padding:20px; position:relative;
-    }
-    .hero::after {
-      content:""; position:absolute; inset:0; background:rgba(0,0,0,0.55);
-    }
-    .hero-content { position:relative; z-index:2; }
-    .hero h1 { font-size:2.5rem; margin:0; color:#ffd700; }
-    .hero p { font-size:1.2rem; margin-top:10px; }
-    .box {
-      max-width:900px; margin:40px auto; background:white; padding:30px;
-      border-radius:16px; box-shadow:0 6px 20px rgba(0,0,0,0.1);
-    }
-    .progress-container {
-      background:#eaeaea; border-radius:20px; height:22px; overflow:hidden;
-      margin-top:10px;
-    }
-    .progress {
-      background:linear-gradient(90deg,#1a8754,#44c06f);
-      height:100%; width:40%;
-    }
-    .qr { text-align:center; margin:20px 0; }
-    .qr img {
-      width:250px; border-radius:12px; background:white; padding:10px;
-      border:1px solid #ddd;
-    }
-    .btn {
-      display:inline-block; padding:14px 28px; background:#1A8754; color:white;
-      text-decoration:none; border-radius:10px; font-weight:bold; transition:0.3s;
-    }
-    .btn:hover { background:#14633f; }
-    .gallery {
-      display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:15px; margin-top:20px;
-    }
-    .gallery img {
-      width:100%; border-radius:12px; height:180px; object-fit:cover;
-      box-shadow:0 4px 10px rgba(0,0,0,0.1);
-    }
-  </style>
+  
   <!-- Open Graph for WhatsApp/Facebook Preview -->
-<meta property="og:title" content="Mesjid Baburrahman Dusun Pontung - Walea Besar">
-<meta property="og:description" content="Galang dana pembangunan Mesjid Baburrahman Dusun Pontung, Kecamatan Walea Besar, Kabupaten Tojo Una-Una. Ayo turut beramal jariyah.">
-<meta property="og:image" content="https://itdasulteng-prog.github.io/MASJID-BABURRAHMAN/images/preview-masjid.jpg">
-<meta property="og:url" content="https://itdasulteng-prog.github.io/MASJID-BABURRAHMAN/">
-<meta property="og:type" content="website">
+  <meta property="og:title" content="Mesjid Baburrahman Dusun Pontung - Walea Besar">
+  <meta property="og:description" content="Galang dana pembangunan Mesjid Baburrahman Dusun Pontung, Kecamatan Walea Besar, Kabupaten Tojo Una-Una. Ayo turut beramal jariyah.">
+  <meta property="og:image" content="https://itdasulteng-prog.github.io/MASJID-BABURRAHMAN/images/preview-masjid.jpg">
+  <meta property="og:url" content="https://itdasulteng-prog.github.io/MASJID-BABURRAHMAN/">
+  <meta property="og:type" content="website">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://itdasulteng-prog.github.io/MASJID-BABURRAHMAN/images/preview-masjid.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://itdasulteng-prog.github.io/MASJID-BABURRAHMAN/images/preview-masjid.jpg">
 
+  <!-- Google Fonts & Tailwind CSS CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            emeraldCustom: '#059669',
+            emeraldDark: '#047857',
+            goldCustom: '#f59e0b',
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-emerald-500 selection:text-white">
 
-<div class="hero">
-  <div class="hero-content">
-    <h1>MASJID BABURRAHMAN</h1>
-    <h2>Dusun Pontung, Desa Pasokan, Kec. Walea Besar, Kab. Tojo Una-Una</h2>
-    <p>“Jika seseorang meninggal dunia, 
-      maka terputuslah amalannya kecuali tiga perkara yaitu: 
-      sedekah jariyah, ilmu yang dimanfaatkan, 
-      atau do’a anak yang sholeh” (HR. Muslim no. 1631)</p>
-  </div>
-</div>
-
-<div class="box">
-  <h2>Donasi Pembangunan & Kegiatan Masjid</h2>
-  <p>
-    Masjid Baburrahman yang terletak di Dusun Pontung, 
-Desa Pasokan, Kec. Walea Besar Kab. Tojo Una Una, 
-membuka kesempatan bagi jamaah dan kaum muslimin 
-untuk berpartisipasi dalam pembangunan, renovasi, 
-dan kegiatan operasional masjid.
-  </p>
-
-  <h3>Target Donasi</h3>
-  <p><strong>Terkumpul: Rp 11.075.000,00 / Target: Rp 464.458.900</strong></p>
-
-  <div class="progress-container"><div class="progress"></div></div>
-
-  <h3 style="margin-top:30px;">Donasi via QRIS</h3>
-  <div class="qr">
-    <img src="qris.png" alt="QRIS Donasi Masjid Baburrahman">
-  </div>
-
-  <h3>Rekening Bank</h3>
-  <p>
-    <strong>Bank Sulteng</strong><br>
-    No. Rekening: <strong>3010207182485</strong><br>
-    a.n. <strong>Masjid Baburrahman</strong>
-  </p>
-
-  <a class="btn" href="https://wa.me/6285394750597" target="_blank">
-    Konfirmasi Donasi via WhatsApp
-  </a>
-</div>
-
-<div class="box">
-  <h2>Galeri Kegiatan Masjid</h2>
-  <div class="gallery">
-    <img src="foto1.jpg" alt="Kegiatan 1">
-    <img src="foto2.jpg" alt="Kegiatan 2">
-    <img src="foto3.jpg" alt="Kegiatan 3">
-    <img src="foto4.jpg" alt="Kegiatan 4">
-    <img src="foto5.jpg" alt="Kegiatan 5">
-    <img src="foto6.jpg" alt="Kegiatan 6">
-    <img src="foto7.jpg" alt="Kegiatan 7">
-    <img src="foto8.jpg" alt="Kegiatan 8">
-    <img src="foto9.jpg" alt="Kegiatan 9">
-    <img src="foto10.jpg" alt="Kegiatan 10">
-    <img src="foto 11.jpeg" alt="Kegiatan 11">
-    <img src="foto12.jpeg" alt="Kegiatan 12">
-    <img src="foto 11.jpeg" alt="Kegiatan 13">
-     <img src="masjid-lama.jpg" alt="Kegiatan 13">
-     <img src="kerja 12.jpeg" alt="Kegiatan 14">
-    <img src="pondasi.jpg" alt="Kegiatan 15">
-
-<div class="box">
-  <h2>Foto Desain Perencanaan Pembangunan Masjid</h2>
-  <div class="gallery">
-    <img src="desain1.jpg" alt="Kegiatan 1">
-    <img src="desain2.jpg" alt="Kegiatan 2">
-    <img src="desain3.jpg" alt="Kegiatan 3">
-    <img src="desain4.jpg" alt="Kegiatan 4">
-    <img src="desain5.jpg" alt="Kegiatan 5">
-    <img src="desain5.jpg" alt="Kegiatan 6">
+  <!-- HERO SECTION -->
+  <header class="relative min-h-[65vh] flex items-center justify-center text-center text-white p-6 bg-cover bg-center" style="background-image: url('latar.jpeg');">
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-slate-900/40"></div>
     
-    <div class="box">
-  <h4>Sekilas Vidio Perjalanan ke Lokasi Masjid 
-    Baburrahman Dusun Pontung, Desa Pasokan</h4>  
-<video width="100%" controls>
-  <source src="Perjalanan.mp4" type="video/mp4">
-  Browser Anda tidak mendukung video.
-</video>
-</div>
- 
-   <div class="box">
-  <h4>Kumpulan Video Kegiatan Pembangunan Masjid</h4>  
-
-  <video width="100%" controls>
-    <source src="rapat.mp4" type="video/mp4">
-    Browser Anda tidak mendukung video.
-  </video>
-
-  <br><br>
-
-  <video width="100%" controls>
-    <source src="kerja.mp4" type="video/mp4">
-    Browser Anda tidak mendukung video.
-  </video>
-</div>
-</div>
-  
-<br><br>
-
-  <video width="100%" controls>
-    <source src="kerja1.mp4" type="video/mp4">
-    Browser Anda tidak mendukung video.
-  </video>
-</div>
-  <br><br>
-  <video width="100%" controls>
-    <source src="kerja2.mp4" type="video/mp4">
-    Browser Anda tidak mendukung video.
-  </video>
-</div> 
- <br><br>
-  <video width="100%" controls>
-    <source src="kerja3.mp4" type="video/mp4">
-    Browser Anda tidak mendukung video.
-  </video>
-</div>
- <br><br>
- <video width="100%" controls>
-    <source src="kerja4.mp4" type="video/mp4">
-    Browser Anda tidak mendukung video.
-  </video>
-</div>
-<br><br>
- <video width="100%" controls>
-    <source src="kerja5.mp4" type="video/mp4">
-    Browser Anda tidak mendukung video.
-  </video>
-</div>
- <br><br>
- <video width="100%" controls>
-    <source src="kerja6.mp4" type="video/mp4">
-    Browser Anda tidak mendukung video.
-  </video>
-</div>
-<div class="box">
-  <h2>Video tentang Kec. Walea Besar</h2>
-  <div style="text-align:center; margin: 20px 0;">
-      <iframe 
-          width="100%" 
-          height="315" 
-          src="https://www.youtube.com/embed/nov_vGMJ1fg" 
-          title="Video Pembangunan Masjid Baburrahman" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          allowfullscreen>
-      </iframe>
-  </div>
-</div>
-<div class="box">
-  <h2>Daftar Donatur</h2>
-  <table style="width:100%; border-collapse: collapse;">
-    <tr>
-      <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Nama</th>
-      <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Nominal</th>
-    </tr>
-    <tr>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">hamba Allah</td>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Rp 100.000</td>
-      </tr>
-    <tr>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Znd</td>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Rp 100.000</td>
-      </tr>
-    <tr>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Pak Andika</td>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Rp 500.000</td>
-      </tr>
-    <tr>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Hamba Allah</td>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Rp 800.000</td>
-      </tr>
-    <tr>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Hamba Allah</td>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Rp 3.000.000</td>
-      </tr>
-    <tr>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Silpa</td>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Rp 500.000</td>
-       </tr>
-    <tr>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Muhammad Akbar Laebo</td>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Rp 250.000</td>
-      <tr>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Eny Kusnany</td>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Rp 225.000</td>
-    </tr>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Hijriah</td>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Rp 150.000</td>
-    </tr>
-     </tr>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Roslinar</td>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Rp 300.000</td>
-    </tr>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Hamba Allah</td>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Rp 500.000</td>
-    </tr>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Mutmainnah Tondo Palu</td>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Rp 3.000.000</td>
-    </tr>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Suna Hihis</td>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Rp 150.000</td>
-    </tr>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Linda Kania Dewi</td>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Rp 500.000</td>
-     </tr>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Mutmainnah Tondo</td>
-      <td style="padding:8px; border-bottom:1px solid #ddd;">Rp 1.000.000</td>
- </table>
-</div>
-  
-<!-- COMMENTS (Firebase + Admin Reply) -->
-<h2>Komentar Pengunjung</h2>
-<div class="comment-box" id="commentSection">
-  <div id="commentControls" style="margin-bottom:10px;">
-    <input type="text" id="visitorName" placeholder="Nama Anda" style="width:48%; padding:8px; margin-right:4%;">
-    <input type="text" id="visitorPhone" placeholder="Nomor WA (opsional)" style="width:48%; padding:8px;">
-    <textarea id="visitorMsg" placeholder="Tulis komentar..." style="width:100%; height:80px; padding:8px; margin-top:8px;"></textarea>
-    <button id="sendCommentBtn" style="margin-top:8px; width:100%; padding:10px; background:#2b7a0b; color:white; border:none; border-radius:5px;">Kirim Komentar</button>
-    <div style="margin-top:8px; display:flex; gap:8px;">
-      <button id="adminLoginBtn" style="flex:1; padding:8px;">Login Admin</button>
-      <button id="adminLogoutBtn" style="flex:1; padding:8px; display:none; background:#c0392b; color:white;">Logout Admin</button>
+    <div class="relative z-10 max-w-3xl mx-auto space-y-4 px-4 py-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs sm:text-sm font-medium backdrop-blur-md">
+        <i class="ph ph-mosque text-base"></i>
+        <span>Pembangunan & Operasional</span>
+      </div>
+      
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-amber-400 uppercase drop-shadow-sm">
+        MASJID BABURRAHMAN
+      </h1>
+      
+      <p class="text-base sm:text-lg text-slate-200 font-medium">
+        Dusun Pontung, Desa Pasokan, Kec. Walea Besar, Kab. Tojo Una-Una
+      </p>
+      
+      <blockquote class="italic text-xs sm:text-sm text-slate-300 max-w-xl mx-auto border-l-2 border-amber-400 pl-4 py-1 mt-6 text-left sm:text-center sm:border-l-0 sm:pl-0">
+        “Jika seseorang meninggal dunia, maka terputuslah amalannya kecuali tiga perkara yaitu: sedekah jariyah, ilmu yang dimanfaatkan, atau do’a anak yang sholeh” 
+        <span class="block mt-1 font-semibold text-amber-300 font-sans opacity-90">(HR. Muslim no. 1631)</span>
+      </blockquote>
     </div>
-  </div>
+  </header>
 
-  <div id="commentsList" style="margin-top:12px;"></div>
-</div>
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="max-w-4xl mx-auto px-4 -mt-10 relative z-20 space-y-8 pb-16">
 
-<!-- Firebase + App logic -->
-<script type="module">
-  // === FIREBASE CONFIG (gunakan config yang Anda berikan) ===
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-  import {
-    getFirestore, collection, addDoc, onSnapshot, query, orderBy, serverTimestamp,
-    doc, addDoc as addSubDoc, deleteDoc
-  } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+    <!-- BOX DONASI & METODE -->
+    <section class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl shadow-slate-200/50 border border-slate-100">
+      <div class="border-b border-slate-100 pb-4 mb-6">
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 flex items-center gap-2">
+          <i class="ph ph-hand-heart text-emerald-600"></i>
+          Donasi Pembangunan & Kegiatan Masjid
+        </h2>
+      </div>
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyDUmbTnwFI6MMGsnCrOJUnG_x_p3gPX0pw",
-    authDomain: "beri-masukan.firebaseapp.com",
-    projectId: "beri-masukan",
-    storageBucket: "beri-masukan.firebasestorage.app",
-    messagingSenderId: "970196231094",
-    appId: "1:970196231094:web:c5965cdf119097ae495717",
-    measurementId: "G-SS8LXE864M"
-  };
+      <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+        Masjid Baburrahman yang terletak di Dusun Pontung, Desa Pasokan, Kec. Walea Besar Kab. Tojo Una Una, membuka kesempatan bagi jamaah dan kaum muslimin untuk berpartisipasi dalam pembangunan, renovasi, dan kegiatan operasional masjid.
+      </p>
 
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
+      <!-- Target Donasi -->
+      <div class="mt-8 bg-slate-50 rounded-xl p-5 border border-slate-100">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-3">
+          <h3 class="font-semibold text-slate-700 text-sm sm:text-base">Progres Penggalangan Dana</h3>
+          <span class="text-xs font-bold bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full">Terkumpul</span>
+        </div>
+        
+        <p class="text-lg sm:text-xl font-bold text-slate-900 mb-3">
+          Rp 11.075.000,00 <span class="text-xs sm:text-sm font-normal text-slate-500">/ Target: Rp 464.458.900</span>
+        </p>
 
-  // Admin password (sesuai permintaan Anda)
-  const ADMIN_PASSWORD = "D4rm4w4nt0";
+        <div class="w-full bg-slate-200 rounded-full h-3.5 overflow-hidden">
+          <div class="bg-gradient-to-r from-emerald-600 to-emerald-400 h-full rounded-full transition-all duration-500" style="width: 2.38%;"></div>
+        </div>
+      </div>
 
-  // DOM
-  const sendBtn = document.getElementById("sendCommentBtn");
-  const nameInput = document.getElementById("visitorName");
-  const phoneInput = document.getElementById("visitorPhone");
-  const msgInput = document.getElementById("visitorMsg");
-  const commentsList = document.getElementById("commentsList");
-  const adminLoginBtn = document.getElementById("adminLoginBtn");
-  const adminLogoutBtn = document.getElementById("adminLogoutBtn");
+      <!-- Donasi QRIS & Rekening Grid -->
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+        <!-- QRIS -->
+        <div class="text-center p-5 bg-emerald-50/50 rounded-xl border border-emerald-100/60">
+          <h3 class="font-semibold text-slate-800 mb-3 flex items-center justify-center gap-1.5 text-sm sm:text-base">
+            <i class="ph ph-qr-code text-emerald-600"></i> Donasi via QRIS
+          </h3>
+          <div class="bg-white p-3 rounded-lg inline-block shadow-sm border border-slate-200/80 mb-2">
+            <img src="qris.png" alt="QRIS Donasi Masjid Baburrahman" class="w-56 h-auto mx-auto rounded">
+          </div>
+          <p class="text-xs text-slate-500">Scan menggunakan aplikasi GoPay, OVO, Dana, ShopeePay, atau Mobile Banking Anda</p>
+        </div>
 
-  // helper: check if admin (sessionStorage)
-  function isAdmin() {
-    return sessionStorage.getItem("masjid_is_admin") === "1";
-  }
+        <!-- Rekening & Tombol -->
+        <div class="space-y-5">
+          <div class="p-5 bg-slate-50 rounded-xl border border-slate-100">
+            <h3 class="font-semibold text-slate-800 mb-3 flex items-center gap-1.5 text-sm sm:text-base">
+              <i class="ph ph-bank text-emerald-600"></i> Rekening Bank
+            </h3>
+            <div class="space-y-1 text-sm text-slate-700">
+              <p class="font-semibold text-slate-900">Bank Sulteng</p>
+              <p class="text-slate-600">No. Rekening: <span class="font-bold text-slate-900 font-mono text-base">3010207182485</span></p>
+              <p class="text-slate-600">a.n. <span class="font-medium text-slate-900">Masjid Baburrahman</span></p>
+            </div>
+          </div>
 
-  function setAdminUI() {
-    if (isAdmin()) {
-      adminLoginBtn.style.display = "none";
-      adminLogoutBtn.style.display = "inline-block";
-    } else {
-      adminLoginBtn.style.display = "inline-block";
-      adminLogoutBtn.style.display = "none";
+          <a href="https://wa.me/6285394750597" target="_blank" class="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-semibold rounded-xl transition duration-200 shadow-lg shadow-emerald-600/20">
+            <i class="ph ph-whatsapp-logo text-xl"></i>
+            Konfirmasi Donasi via WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERI KEGIATAN -->
+    <section class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl shadow-slate-200/50 border border-slate-100">
+      <div class="border-b border-slate-100 pb-4 mb-6">
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 flex items-center gap-2">
+          <i class="ph ph-images text-emerald-600"></i>
+          Galeri Kegiatan Masjid
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
+        <div class="aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-sm"><img src="foto1.jpg" alt="Kegiatan 1" class="w-full h-full object-cover hover:scale-105 transition duration-300"></div>
+        <div class="aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-sm"><img src="foto2.jpg" alt="Kegiatan 2" class="w-full h-full object-cover hover:scale-105 transition duration-300"></div>
+        <div class="aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-sm"><img src="foto3.jpg" alt="Kegiatan 3" class="w-full h-full object-cover hover:scale-105 transition duration-300"></div>
+        <div class="aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-sm"><img src="foto4.jpg" alt="Kegiatan 4" class="w-full h-full object-cover hover:scale-105 transition duration-300"></div>
+        <div class="aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-sm"><img src="foto5.jpg" alt="Kegiatan 5" class="w-full h-full object-cover hover:scale-105 transition duration-300"></div>
+        <div class="aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-sm"><img src="foto6.jpg" alt="Kegiatan 6" class="w-full h-full object-cover hover:scale-105 transition duration-300"></div>
+        <div class="aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-sm"><img src="foto7.jpg" alt="Kegiatan 7" class="w-full h-full object-cover hover:scale-105 transition duration-300"></div>
+        <div class="aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-sm"><img src="foto8.jpg" alt="Kegiatan 8" class="w-full h-full object-cover hover:scale-105 transition duration-300"></div>
+        <div class="aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-sm"><img src="foto9.jpg" alt="Kegiatan 9" class="w-full h-full object-cover hover:scale-105 transition duration-300"></div>
+        <div class="aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-sm"><img src="foto10.jpg" alt="Kegiatan 10" class="w-full h-full object-cover hover:scale-105 transition duration-300"></div>
+        <div class="aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-sm"><img src="foto 11.jpeg" alt="Kegiatan 11" class="w-full h-full object-cover hover:scale-105 transition duration-300"></div>
+        <div class="aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-sm"><img src="foto12.jpeg" alt="Kegiatan 12" class="w-full h-full object-cover hover:scale-105 transition duration-300"></div>
+        <div class="aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-sm"><img src="foto 11.jpeg" alt="Kegiatan 13" class="w-full h-full object-cover hover:scale-105 transition duration-300"></div>
+        <div class="aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-sm"><img src="masjid-lama.jpg" alt="Kegiatan 13" class="w-full h-full object-cover hover:scale-105 transition duration-300"></div>
+        <div class="aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-sm"><img src="kerja 12.jpeg" alt="Kegiatan 14" class="w-full h-full object-cover hover:scale-105 transition duration-300"></div>
+        <div class="aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-sm"><img src="pondasi.jpg" alt="Kegiatan 15" class="w-full h-full object-cover hover:scale-105 transition duration-300"></div>
+      </div>
+    </section>
+
+    <!-- DESAIN PERENCANAAN -->
+    <section class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl shadow-slate-200/50 border border-slate-100">
+      <div class="border-b border-slate-100 pb-4 mb-6">
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 flex items-center gap-2">
+          <i class="ph ph-blueprint text-emerald-600"></i>
+          Foto Desain Perencanaan Pembangunan Masjid
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-3 sm:gap-4">
+        <div class="aspect-video rounded-xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-sm"><img src="desain1.jpg" alt="Kegiatan 1" class="w-full h-full object-cover hover:scale-105 transition duration-300"></div>
+        <div class="aspect-video rounded-xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-sm"><img src="desain2.jpg" alt="Kegiatan 2" class="w-full h-full object-cover hover:scale-105 transition duration-300"></div>
+        <div class="aspect-video rounded-xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-sm"><img src="desain3.jpg" alt="Kegiatan 3" class="w-full h-full object-cover hover:scale-105 transition duration-300"></div>
+        <div class="aspect-video rounded-xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-sm"><img src="desain4.jpg" alt="Kegiatan 4" class="w-full h-full object-cover hover:scale-105 transition duration-300"></div>
+        <div class="aspect-video rounded-xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-sm"><img src="desain5.jpg" alt="Kegiatan 5" class="w-full h-full object-cover hover:scale-105 transition duration-300"></div>
+        <div class="aspect-video rounded-xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-sm"><img src="desain5.jpg" alt="Kegiatan 6" class="w-full h-full object-cover hover:scale-105 transition duration-300"></div>
+      </div>
+    </section>
+
+    <!-- VIDEO PERJALANAN & KEGIATAN -->
+    <section class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl shadow-slate-200/50 border border-slate-100 space-y-8">
+      
+      <!-- Video Perjalanan -->
+      <div>
+        <div class="border-b border-slate-100 pb-4 mb-4">
+          <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+            <i class="ph ph-video-camera text-emerald-600"></i>
+            Sekilas Vidio Perjalanan ke Lokasi Masjid Baburrahman Dusun Pontung, Desa Pasokan
+          </h3>
+        </div>
+        <div class="rounded-xl overflow-hidden bg-black shadow-md">
+          <video width="100%" controls class="w-full max-h-[450px]">
+            <source src="Perjalanan.mp4" type="video/mp4">
+            Browser Anda tidak mendukung video.
+          </video>
+        </div>
+      </div>
+
+      <!-- Kumpulan Video Kegiatan -->
+      <div>
+        <div class="border-b border-slate-100 pb-4 mb-4">
+          <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+            <i class="ph ph-film-strip text-emerald-600"></i>
+            Kumpulan Video Kegiatan Pembangunan Masjid
+          </h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="rounded-xl overflow-hidden bg-black shadow-sm border border-slate-200">
+            <video width="100%" controls class="w-full aspect-video"><source src="rapat.mp4" type="video/mp4">Browser Anda tidak mendukung video.</video>
+          </div>
+          <div class="rounded-xl overflow-hidden bg-black shadow-sm border border-slate-200">
+            <video width="100%" controls class="w-full aspect-video"><source src="kerja.mp4" type="video/mp4">Browser Anda tidak mendukung video.</video>
+          </div>
+          <div class="rounded-xl overflow-hidden bg-black shadow-sm border border-slate-200">
+            <video width="100%" controls class="w-full aspect-video"><source src="kerja1.mp4" type="video/mp4">Browser Anda tidak mendukung video.</video>
+          </div>
+          <div class="rounded-xl overflow-hidden bg-black shadow-sm border border-slate-200">
+            <video width="100%" controls class="w-full aspect-video"><source src="kerja2.mp4" type="video/mp4">Browser Anda tidak mendukung video.</video>
+          </div>
+          <div class="rounded-xl overflow-hidden bg-black shadow-sm border border-slate-200">
+            <video width="100%" controls class="w-full aspect-video"><source src="kerja3.mp4" type="video/mp4">Browser Anda tidak mendukung video.</video>
+          </div>
+          <div class="rounded-xl overflow-hidden bg-black shadow-sm border border-slate-200">
+            <video width="100%" controls class="w-full aspect-video"><source src="kerja4.mp4" type="video/mp4">Browser Anda tidak mendukung video.</video>
+          </div>
+          <div class="rounded-xl overflow-hidden bg-black shadow-sm border border-slate-200">
+            <video width="100%" controls class="w-full aspect-video"><source src="kerja5.mp4" type="video/mp4">Browser Anda tidak mendukung video.</video>
+          </div>
+          <div class="rounded-xl overflow-hidden bg-black shadow-sm border border-slate-200">
+            <video width="100%" controls class="w-full aspect-video"><source src="kerja6.mp4" type="video/mp4">Browser Anda tidak mendukung video.</video>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- VIDEO YOUTUBE -->
+    <section class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl shadow-slate-200/50 border border-slate-100">
+      <div class="border-b border-slate-100 pb-4 mb-4">
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 flex items-center gap-2">
+          <i class="ph ph-youtube-logo text-red-600"></i>
+          Video tentang Kec. Walea Besar
+        </h2>
+      </div>
+      <div class="aspect-video w-full rounded-xl overflow-hidden shadow-md">
+        <iframe 
+            width="100%" 
+            height="100%" 
+            src="https://www.youtube.com/embed/nov_vGMJ1fg" 
+            title="Video Pembangunan Masjid Baburrahman" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <!-- DAFTAR DONATUR -->
+    <section class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl shadow-slate-200/50 border border-slate-100">
+      <div class="border-b border-slate-100 pb-4 mb-6">
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 flex items-center gap-2">
+          <i class="ph ph-users text-emerald-600"></i>
+          Daftar Donatur
+        </h2>
+      </div>
+
+      <div class="overflow-x-auto rounded-xl border border-slate-100">
+        <table class="w-full text-left text-sm text-slate-700">
+          <thead class="bg-slate-50 text-slate-900 font-semibold border-b border-slate-200">
+            <tr>
+              <th class="py-3 px-4">Nama</th>
+              <th class="py-3 px-4 text-right">Nominal</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr class="hover:bg-slate-50/80"><td class="py-3 px-4">hamba Allah</td><td class="py-3 px-4 text-right font-medium text-emerald-700">Rp 100.000</td></tr>
+            <tr class="hover:bg-slate-50/80"><td class="py-3 px-4">Znd</td><td class="py-3 px-4 text-right font-medium text-emerald-700">Rp 100.000</td></tr>
+            <tr class="hover:bg-slate-50/80"><td class="py-3 px-4">Pak Andika</td><td class="py-3 px-4 text-right font-medium text-emerald-700">Rp 500.000</td></tr>
+            <tr class="hover:bg-slate-50/80"><td class="py-3 px-4">Hamba Allah</td><td class="py-3 px-4 text-right font-medium text-emerald-700">Rp 800.000</td></tr>
+            <tr class="hover:bg-slate-50/80"><td class="py-3 px-4">Hamba Allah</td><td class="py-3 px-4 text-right font-medium text-emerald-700">Rp 3.000.000</td></tr>
+            <tr class="hover:bg-slate-50/80"><td class="py-3 px-4">Silpa</td><td class="py-3 px-4 text-right font-medium text-emerald-700">Rp 500.000</td></tr>
+            <tr class="hover:bg-slate-50/80"><td class="py-3 px-4">Muhammad Akbar Laebo</td><td class="py-3 px-4 text-right font-medium text-emerald-700">Rp 250.000</td></tr>
+            <tr class="hover:bg-slate-50/80"><td class="py-3 px-4">Eny Kusnany</td><td class="py-3 px-4 text-right font-medium text-emerald-700">Rp 225.000</td></tr>
+            <tr class="hover:bg-slate-50/80"><td class="py-3 px-4">Hijriah</td><td class="py-3 px-4 text-right font-medium text-emerald-700">Rp 150.000</td></tr>
+            <tr class="hover:bg-slate-50/80"><td class="py-3 px-4">Roslinar</td><td class="py-3 px-4 text-right font-medium text-emerald-700">Rp 300.000</td></tr>
+            <tr class="hover:bg-slate-50/80"><td class="py-3 px-4">Hamba Allah</td><td class="py-3 px-4 text-right font-medium text-emerald-700">Rp 500.000</td></tr>
+            <tr class="hover:bg-slate-50/80"><td class="py-3 px-4">Mutmainnah Tondo Palu</td><td class="py-3 px-4 text-right font-medium text-emerald-700">Rp 3.000.000</td></tr>
+            <tr class="hover:bg-slate-50/80"><td class="py-3 px-4">Suna Hihis</td><td class="py-3 px-4 text-right font-medium text-emerald-700">Rp 150.000</td></tr>
+            <tr class="hover:bg-slate-50/80"><td class="py-3 px-4">Linda Kania Dewi</td><td class="py-3 px-4 text-right font-medium text-emerald-700">Rp 500.000</td></tr>
+            <tr class="hover:bg-slate-50/80"><td class="py-3 px-4">Mutmainnah Tondo</td><td class="py-3 px-4 text-right font-medium text-emerald-700">Rp 1.000.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- KOMENTAR PENGUNJUNG -->
+    <section class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl shadow-slate-200/50 border border-slate-100">
+      <div class="border-b border-slate-100 pb-4 mb-6">
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 flex items-center gap-2">
+          <i class="ph ph-chat-teardrop-dots text-emerald-600"></i>
+          Komentar Pengunjung
+        </h2>
+      </div>
+
+      <div class="space-y-4" id="commentSection">
+        <div id="commentControls" class="bg-slate-50 p-4 sm:p-5 rounded-xl border border-slate-100 space-y-3">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <input type="text" id="visitorName" placeholder="Nama Anda" class="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+            <input type="text" id="visitorPhone" placeholder="Nomor WA (opsional)" class="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+          </div>
+          <textarea id="visitorMsg" placeholder="Tulis komentar..." class="w-full h-24 px-3.5 py-2.5 bg-white border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none resize-none"></textarea>
+          
+          <button id="sendCommentBtn" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-lg text-sm transition shadow-sm">
+            Kirim Komentar
+          </button>
+          
+          <div class="flex gap-2 pt-2 border-t border-slate-200/60">
+            <button id="adminLoginBtn" class="flex-1 py-1.5 px-3 bg-slate-200 hover:bg-slate-300 text-slate-700 rounded text-xs font-medium transition">
+              Login Admin
+            </button>
+            <button id="adminLogoutBtn" class="flex-1 py-1.5 px-3 bg-rose-600 hover:bg-rose-700 text-white rounded text-xs font-medium transition hidden">
+              Logout Admin
+            </button>
+          </div>
+        </div>
+
+        <div id="commentsList" class="space-y-3 mt-6"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 text-center text-xs sm:text-sm">
+    <div class="max-w-4xl mx-auto px-4">
+      <p>&copy; Masjid Baburrahman Dusun Pontung. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Firebase + App logic -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import {
+      getFirestore, collection, addDoc, onSnapshot, query, orderBy, serverTimestamp,
+      doc, addDoc as addSubDoc, deleteDoc
+    } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDUmbTnwFI6MMGsnCrOJUnG_x_p3gPX0pw",
+      authDomain: "beri-masukan.firebaseapp.com",
+      projectId: "beri-masukan",
+      storageBucket: "beri-masukan.firebasestorage.app",
+      messagingSenderId: "970196231094",
+      appId: "1:970196231094:web:c5965cdf119097ae495717",
+      measurementId: "G-SS8LXE864M"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const ADMIN_PASSWORD = "D4rm4w4nt0";
+
+    const sendBtn = document.getElementById("sendCommentBtn");
+    const nameInput = document.getElementById("visitorName");
+    const phoneInput = document.getElementById("visitorPhone");
+    const msgInput = document.getElementById("visitorMsg");
+    const commentsList = document.getElementById("commentsList");
+    const adminLoginBtn = document.getElementById("adminLoginBtn");
+    const adminLogoutBtn = document.getElementById("adminLogoutBtn");
+
+    function isAdmin() {
+      return sessionStorage.getItem("masjid_is_admin") === "1";
     }
-  }
 
-  // admin login prompt
-  adminLoginBtn.addEventListener("click", () => {
-    const p = prompt("Masukkan password admin:");
-    if (p === ADMIN_PASSWORD) {
-      sessionStorage.setItem("masjid_is_admin", "1");
-      alert("Login admin berhasil — Anda dapat membalas atau menghapus komentar.");
+    function setAdminUI() {
+      if (isAdmin()) {
+        adminLoginBtn.classList.add("hidden");
+        adminLogoutBtn.classList.remove("hidden");
+      } else {
+        adminLoginBtn.classList.remove("hidden");
+        adminLogoutBtn.classList.add("hidden");
+      }
+    }
+
+    adminLoginBtn.addEventListener("click", () => {
+      const p = prompt("Masukkan password admin:");
+      if (p === ADMIN_PASSWORD) {
+        sessionStorage.setItem("masjid_is_admin", "1");
+        alert("Login admin berhasil — Anda dapat membalas atau menghapus komentar.");
+        setAdminUI();
+      } else {
+        alert("Password salah.");
+      }
+    });
+
+    adminLogoutBtn.addEventListener("click", () => {
+      sessionStorage.removeItem("masjid_is_admin");
       setAdminUI();
-    } else {
-      alert("Password salah.");
-    }
-  });
+      alert("Anda telah logout sebagai admin.");
+    });
 
-  adminLogoutBtn.addEventListener("click", () => {
-    sessionStorage.removeItem("masjid_is_admin");
     setAdminUI();
-    alert("Anda telah logout sebagai admin.");
-  });
 
-  setAdminUI();
+    sendBtn.addEventListener("click", async () => {
+      const name = nameInput.value.trim();
+      const phone = phoneInput.value.trim();
+      const text = msgInput.value.trim();
+      if (!name || !text) { alert("Nama dan komentar wajib diisi."); return; }
 
-  // Submit comment
-  sendBtn.addEventListener("click", async () => {
-    const name = nameInput.value.trim();
-    const phone = phoneInput.value.trim();
-    const text = msgInput.value.trim();
-    if (!name || !text) { alert("Nama dan komentar wajib diisi."); return; }
-
-    // save to Firestore collection 'comments'
-    try {
-      await addDoc(collection(db, "comments"), {
-        name, phone, text,
-        createdAt: serverTimestamp()
-      });
-      nameInput.value = ""; phoneInput.value = ""; msgInput.value = "";
-    } catch (e) {
-      console.error("Gagal kirim komentar:", e);
-      alert("Gagal mengirim komentar. Coba lagi.");
-    }
-  });
-
-  // Render a single comment + replies
-  function renderComment(docSnap) {
-    const data = docSnap.data();
-    const id = docSnap.id;
-
-    // comment container
-    const wrap = document.createElement("div");
-    wrap.style.background = "#fff";
-    wrap.style.borderRadius = "8px";
-    wrap.style.padding = "10px";
-    wrap.style.marginBottom = "10px";
-    wrap.style.boxShadow = "0 1px 4px rgba(0,0,0,0.06)";
-
-    const header = document.createElement("div");
-    header.innerHTML = `<strong>${escapeHtml(data.name || "Anonim")}</strong> <small style="color:#666; margin-left:8px;">${data.phone ? escapeHtml(data.phone) : ""}</small>`;
-    wrap.appendChild(header);
-
-    const body = document.createElement("div");
-    body.style.marginTop = "6px";
-    body.textContent = data.text || "";
-    wrap.appendChild(body);
-
-    // replies container
-    const repliesWrap = document.createElement("div");
-    repliesWrap.style.marginTop = "10px";
-    repliesWrap.style.marginLeft = "10px";
-    repliesWrap.id = "replies-" + id;
-    wrap.appendChild(repliesWrap);
-
-    // admin controls (reply & delete) - shown only if admin
-    const ctrl = document.createElement("div");
-    ctrl.style.marginTop = "8px";
-    if (isAdmin()) {
-      const replyBtn = document.createElement("button");
-      replyBtn.textContent = "Balas (Admin)";
-      replyBtn.style.marginRight = "8px";
-      replyBtn.style.padding = "6px 8px";
-
-      const delBtn = document.createElement("button");
-      delBtn.textContent = "Hapus";
-      delBtn.style.padding = "6px 8px";
-      delBtn.style.background = "#c0392b";
-      delBtn.style.color = "#fff";
-      delBtn.style.border = "none";
-
-      // reply form (initially hidden)
-      const replyArea = document.createElement("div");
-      replyArea.style.display = "none";
-      replyArea.style.marginTop = "8px";
-
-      const replyInput = document.createElement("textarea");
-      replyInput.style.width = "100%";
-      replyInput.style.height = "60px";
-      replyInput.placeholder = "Tulis balasan admin...";
-
-      const replySend = document.createElement("button");
-      replySend.textContent = "Kirim Balasan";
-      replySend.style.marginTop = "6px";
-      replySend.style.padding = "8px";
-      replySend.style.background = "#2b7a0b";
-      replySend.style.color = "#fff";
-      replySend.style.border = "none";
-
-      replyBtn.addEventListener("click", () => {
-        replyArea.style.display = replyArea.style.display === "none" ? "block" : "none";
-      });
-
-      replySend.addEventListener("click", async () => {
-        const txt = replyInput.value.trim();
-        if (!txt) { alert("Balasan kosong."); return; }
-        try {
-          await addSubDoc(collection(db, "comments", id, "replies"), {
-            admin: true,
-            text: txt,
-            createdAt: serverTimestamp()
-          });
-          replyInput.value = "";
-          replyArea.style.display = "none";
-        } catch (e) {
-          console.error(e);
-          alert("Gagal mengirim balasan.");
-        }
-      });
-
-      delBtn.addEventListener("click", async () => {
-        if (!confirm("Hapus komentar ini?")) return;
-        try {
-          // delete all replies first is optional for cleanup (not implemented here)
-          await deleteDoc(doc(db, "comments", id));
-          // UI will auto-update via snapshot listener
-        } catch (e) {
-          console.error(e);
-          alert("Gagal menghapus komentar.");
-        }
-      });
-
-      replyArea.appendChild(replyInput);
-      replyArea.appendChild(replySend);
-
-      ctrl.appendChild(replyBtn);
-      ctrl.appendChild(delBtn);
-      ctrl.appendChild(replyArea);
-    } else {
-      // show "Balas" button that invites to admin login
-      const hint = document.createElement("div");
-      hint.style.marginTop = "8px";
-      hint.style.color = "#666";
-      hint.textContent = "Jika Anda admin, silakan login untuk membalas.";
-      ctrl.appendChild(hint);
-    }
-
-    wrap.appendChild(ctrl);
-
-    // replace or append
-    wrap.setAttribute("data-id", id);
-    return { wrap, repliesWrap };
-  }
-
-  // escape
-  function escapeHtml(str) {
-    return str.replaceAll && str.replaceAll(/[&<>"']/g, (m) => {
-      return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[m];
-    });
-  }
-
-  // Real-time listener for comments
-  const q = query(collection(db, "comments"), orderBy("createdAt", "desc"));
-  onSnapshot(q, (snapshot) => {
-    commentsList.innerHTML = "";
-    snapshot.forEach((docSnap) => {
-      const { wrap, repliesWrap } = renderComment(docSnap);
-      commentsList.appendChild(wrap);
-
-      // realtime listener for replies for this comment
-      const repliesQ = query(collection(db, "comments", docSnap.id, "replies"), orderBy("createdAt", "asc"));
-      onSnapshot(repliesQ, (rSnap) => {
-        repliesWrap.innerHTML = "";
-        rSnap.forEach((rDoc) => {
-          const r = rDoc.data();
-          const el = document.createElement("div");
-          el.style.background = r.admin ? "#f1f8ee" : "#f7f7f7";
-          el.style.padding = "8px";
-          el.style.borderRadius = "6px";
-          el.style.marginBottom = "6px";
-          el.innerHTML = `<small style="color:#2b7a0b;"><b>${r.admin ? "Admin" : "Balasan"}</b></small><div style="margin-top:4px;">${escapeHtml(r.text || "")}</div>`;
-          repliesWrap.appendChild(el);
+      try {
+        await addDoc(collection(db, "comments"), {
+          name, phone, text,
+          createdAt: serverTimestamp()
         });
-      }, (err) => console.error(err));
+        nameInput.value = ""; phoneInput.value = ""; msgInput.value = "";
+      } catch (e) {
+        console.error("Gagal kirim komentar:", e);
+        alert("Gagal mengirim komentar. Coba lagi.");
+      }
     });
-  }, (err) => console.error(err));
-</script>
 
-</script>
-</div>
+    function renderComment(docSnap) {
+      const data = docSnap.data();
+      const id = docSnap.id;
 
+      const wrap = document.createElement("div");
+      wrap.className = "bg-slate-50 border border-slate-200/80 rounded-xl p-4 space-y-2 shadow-sm";
 
+      const header = document.createElement("div");
+      header.className = "flex items-center justify-between text-sm";
+      header.innerHTML = `<div><strong class="text-slate-900 font-semibold">${escapeHtml(data.name || "Anonim")}</strong> <span class="text-xs text-slate-500 ml-1 font-mono">${data.phone ? escapeHtml(data.phone) : ""}</span></div>`;
+      wrap.appendChild(header);
+
+      const body = document.createElement("div");
+      body.className = "text-sm text-slate-700 leading-relaxed";
+      body.textContent = data.text || "";
+      wrap.appendChild(body);
+
+      const repliesWrap = document.createElement("div");
+      repliesWrap.className = "mt-3 pl-3 border-l-2 border-emerald-500 space-y-2";
+      repliesWrap.id = "replies-" + id;
+      wrap.appendChild(repliesWrap);
+
+      const ctrl = document.createElement("div");
+      ctrl.className = "pt-2 text-xs border-t border-slate-200/60 mt-3";
+      
+      if (isAdmin()) {
+        const btnGroup = document.createElement("div");
+        btnGroup.className = "flex items-center gap-2";
+
+        const replyBtn = document.createElement("button");
+        replyBtn.textContent = "Balas (Admin)";
+        replyBtn.className = "px-2.5 py-1 bg-slate-200 hover:bg-slate-300 text-slate-800 rounded font-medium transition";
+
+        const delBtn = document.createElement("button");
+        delBtn.textContent = "Hapus";
+        delBtn.className = "px-2.5 py-1 bg-rose-600 hover:bg-rose-700 text-white rounded font-medium transition";
+
+        const replyArea = document.createElement("div");
+        replyArea.className = "hidden mt-3 space-y-2";
+
+        const replyInput = document.createElement("textarea");
+        replyInput.className = "w-full h-16 p-2 bg-white border border-slate-300 rounded-md text-xs focus:ring-1 focus:ring-emerald-500 focus:outline-none";
+        replyInput.placeholder = "Tulis balasan admin...";
+
+        const replySend = document.createElement("button");
+        replySend.textContent = "Kirim Balasan";
+        replySend.className = "px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded text-xs font-medium transition";
+
+        replyBtn.addEventListener("click", () => {
+          replyArea.classList.toggle("hidden");
+        });
+
+        replySend.addEventListener("click", async () => {
+          const txt = replyInput.value.trim();
+          if (!txt) { alert("Balasan kosong."); return; }
+          try {
+            await addSubDoc(collection(db, "comments", id, "replies"), {
+              admin: true,
+              text: txt,
+              createdAt: serverTimestamp()
+            });
+            replyInput.value = "";
+            replyArea.classList.add("hidden");
+          } catch (e) {
+            console.error(e);
+            alert("Gagal mengirim balasan.");
+          }
+        });
+
+        delBtn.addEventListener("click", async () => {
+          if (!confirm("Hapus komentar ini?")) return;
+          try {
+            await deleteDoc(doc(db, "comments", id));
+          } catch (e) {
+            console.error(e);
+            alert("Gagal menghapus komentar.");
+          }
+        });
+
+        replyArea.appendChild(replyInput);
+        replyArea.appendChild(replySend);
+
+        btnGroup.appendChild(replyBtn);
+        btnGroup.appendChild(delBtn);
+        ctrl.appendChild(btnGroup);
+        ctrl.appendChild(replyArea);
+      } else {
+        const hint = document.createElement("div");
+        hint.className = "text-slate-400 text-xs italic";
+        hint.textContent = "Jika Anda admin, silakan login untuk membalas.";
+        ctrl.appendChild(hint);
+      }
+
+      wrap.appendChild(ctrl);
+      wrap.setAttribute("data-id", id);
+      return { wrap, repliesWrap };
+    }
+
+    function escapeHtml(str) {
+      return str.replaceAll && str.replaceAll(/[&<>"']/g, (m) => {
+        return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[m];
+      });
+    }
+
+    const q = query(collection(db, "comments"), orderBy("createdAt", "desc"));
+    onSnapshot(q, (snapshot) => {
+      commentsList.innerHTML = "";
+      snapshot.forEach((docSnap) => {
+        const { wrap, repliesWrap } = renderComment(docSnap);
+        commentsList.appendChild(wrap);
+
+        const repliesQ = query(collection(db, "comments", docSnap.id, "replies"), orderBy("createdAt", "asc"));
+        onSnapshot(repliesQ, (rSnap) => {
+          repliesWrap.innerHTML = "";
+          rSnap.forEach((rDoc) => {
+            const r = rDoc.data();
+            const el = document.createElement("div");
+            el.className = r.admin ? "bg-emerald-50 border border-emerald-100 p-2.5 rounded-lg text-xs" : "bg-slate-100 p-2.5 rounded-lg text-xs";
+            el.innerHTML = `<div class="font-semibold ${r.admin ? 'text-emerald-700' : 'text-slate-700'} mb-1">${r.admin ? "Admin" : "Balasan"}</div><div class="text-slate-700">${escapeHtml(r.text || "")}</div>`;
+            repliesWrap.appendChild(el);
+          });
+        }, (err) => console.error(err));
+      });
+    }, (err) => console.error(err));
+  </script>
 </body>
 </html>
